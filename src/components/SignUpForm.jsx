@@ -1,6 +1,20 @@
 import { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyD51mOy12SQWO2V5W6Qrt7o3vmZp4DtQXo",
+  authDomain: "timber-login-nm.firebaseapp.com",
+  projectId: "timber-login-nm",
+  storageBucket: "timber-login-nm.appspot.com",
+  messagingSenderId: "486368477202",
+  appId: "1:486368477202:web:5137a8d58292d34fcd18cb"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 
 export default function SignUpForm() {
   const [firstName, setFirstName] = useState();
@@ -53,7 +67,7 @@ export default function SignUpForm() {
           <Button
             variant='success'
             type="submit"
-            size="lg">Login</Button>
+            size="lg">Sign Up</Button>
         </Form.Group>
       </Form>
     </>
